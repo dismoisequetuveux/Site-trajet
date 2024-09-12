@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planification des trajets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Planification des trajets</h1>
+    </header>
+
+    <section class="trajet">
+        <h2>13 septembre</h2>
+        <div class="case-horaire">
+            <p><strong>Cosma</strong> part pour arriver à <strong>11h30</strong> à son appart (1 rue Louis Aragon, Orly)</p>
+        </div>
+    </section>
+
+    <section class="trajet">
+        <h2>14 septembre</h2>
+        <div class="case-horaire">
+            <p><strong>MD9</strong> part chez <strong>Cosma</strong>, puis ils vont ensemble au <strong>McDo</strong> pour <strong>12h27</strong></p>
+			<div class="map-container">
+				<a href="https://maps.app.goo.gl/18FQFj3Ut5wbdNgP9" class="map-link"><img src="img1.png" alt="Carte du trajet" class="map-image"></a>
+				<a href="https://maps.app.goo.gl/AKepZyehw2tiPk1S8" class="map-link"><img src="img2.png" alt="Carte du trajet" class="map-image"></a>
+			</div>
+		</div>
+        
+        <div class="case-horaire">
+            <p><strong>Adamafort</strong> part pour arriver au McDo à <strong>12h30</strong></p>
+			<div class="map-container">
+				<a href="https://maps.app.goo.gl/Rb5jzQr33ecXf6Wy7" class="map-link"><img src="img3.png" alt="Carte du trajet" class="map-image"></a>
+			</div>
+		</div>
+        
+        <div class="case-horaire">
+            <p><strong>Adamafort</strong>, <strong>MD9</strong>, et <strong>Cosma</strong> partent du McDo à <strong>13h40</strong> pour arriver à <strong>13h56</strong> au stade</p>
+            <div class="map-container">
+				<a href="https://maps.app.goo.gl/Hf7AB1FogUKTjaNUA" class="map-link"><img src="img4.png" alt="Carte du trajet" class="map-image"></a>
+			</div>
+		</div>
+    </section>
+	<script>
+		window.onload = function() {
+			const header = document.querySelector("header");
+			const backgroundInfo = document.getElementById("background-info");
+			const currentHour = new Date().getHours();
+
+			// Choix du dégradé en fonction de l'heure
+			if (currentHour >= 5 && currentHour < 8) {
+				// Lever du soleil
+				header.style.background = "linear-gradient(270deg, #FF7E5F, #2C3E50)";
+			} else if (currentHour >= 8 && currentHour < 12) {
+				// Matinée
+				header.style.background = "linear-gradient(-20deg, #0099CC, #B0E2A5)";
+			} else if (currentHour >= 12 && currentHour < 14) {
+				// Midi avec une touche de jaune
+				header.style.background = "linear-gradient(180deg, #FFFF99, #87CEEB)";
+			} else if (currentHour >= 14 && currentHour < 17) {
+				// Après-midi
+				header.style.background = "linear-gradient(20deg, #0099CC, #B0E2A5)";
+			} else if (currentHour >= 17 && currentHour < 20) {
+				// Coucher du soleil
+				header.style.background = "linear-gradient(90deg, #FFB347, #2C3E50)";
+			} else {
+				// Nuit
+				header.style.background = "linear-gradient(0deg, #2C3E50, #000000)";
+			}
+
+			// Affichage du fond dans l'élément background-info
+			backgroundInfo.textContent = "Couleur de fond actuelle : " + header.style.background;
+		};
+	</script>
+</body>
+</html>

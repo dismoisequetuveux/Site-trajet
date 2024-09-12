@@ -1,0 +1,96 @@
+body {
+    background: linear-gradient(45deg, #4CAF50, #e0f7fa, #4CAF50, #f4f4f4);
+    background-size: 400% 400%;
+    animation: gradientBackground 5s ease forwards;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+header {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    transition: background 1s ease;
+    font-size: 1.2em;
+    background-size: cover; /* Pour bien couvrir l'élément avec le dégradé */
+    background-position: center; /* Centrer le dégradé */
+}
+
+h1 {
+    margin: 0;
+}
+
+h1, h2 {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+h1:hover, h2:hover {
+    text-shadow: 4px 4px 12px rgba(0, 255, 0, 0.8);
+}
+
+.trajet {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.trajet h2 {
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+    color: #4CAF50;
+}
+
+.case-horaire {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.case-horaire p {
+    margin: 0;
+    font-size: 1.1em;
+    text-align: left;
+    width: 100%;
+}
+
+.case-horaire .map-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.map-link {
+    margin-top: 15px;
+}
+
+.map-image {
+    width: 90%; /* Réduction de la taille de l'image de 10% */
+    height: auto; /* Laisse la hauteur s'adapter proportionnellement à la largeur */
+    border-radius: 8px;
+    object-fit: cover; /* Ajuste l'image à la taille du conteneur sans déformation */
+    transition: transform 0.3s ease; /* Transition fluide pour le survol */
+    display: block;
+}
+
+.map-image:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
