@@ -50,6 +50,15 @@ h2:hover {
     color: #4CAF50;
 }
 
+.trajet:first-of-type {
+    background-color: rgba(211, 211, 211, 0.5); /* Light gray with 50% transparency */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .case-horaire {
     opacity: 0;
     transform: translateY(20px);
